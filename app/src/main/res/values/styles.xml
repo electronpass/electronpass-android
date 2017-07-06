@@ -20,9 +20,9 @@ along with ElectronPass. If not, see <http://www.gnu.org/licenses/>.
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/lightTheme_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/lightTheme_colorPrimaryDark</item>
+        <item name="colorAccent">@color/lightTheme_colorAccent</item>
     </style>
 
 </resources>

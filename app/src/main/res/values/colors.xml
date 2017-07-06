@@ -18,7 +18,7 @@ along with ElectronPass. If not, see <http://www.gnu.org/licenses/>.
 -->
 
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="lightTheme_colorPrimary">#1565C0</color>
+    <color name="lightTheme_colorPrimaryDark">#0D47A1</color>
+    <color name="lightTheme_colorAccent">#00BCD4</color>
 </resources>
