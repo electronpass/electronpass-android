@@ -7,3 +7,6 @@
 /build
 /captures
 .externalNativeBuild
+
+app/lib/libsodium
+app/lib/libelectronpass.so

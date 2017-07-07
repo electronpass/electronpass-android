@@ -9,6 +9,18 @@ This Android app is currently developed using Android Studio 3.0 or newer. To ru
 
 These are all available for download via Android SKD Manager.
 
+After cloning this repo, you have to initialize libelectronpass submodule:
+````
+git submodule init
+git submodule update
+````
+
+`libelectronpass` requires `libsodium` - to download and compile it for Android run (might take a while):
+````
+cd app/lib # THIS IS IMPORTANT!
+bash fetch_sodium.sh
+````
+
 **Important notes**:
 - on Linux, you might have wrong version of `libncurses` and clang won't find it - run these commands:
     ````
