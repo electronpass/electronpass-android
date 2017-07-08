@@ -15,21 +15,21 @@ You should have received a copy of the GNU General Public License
 along with ElectronPass. If not, see <http://www.gnu.org/licenses/>.
 */
 
-package io.github.electronpass
+#include <jni.h>
+#include <string>
+#include "../../../lib/libelectronpass/include/passwords.hpp"
 
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
-import io.github.electronpass.libelectronpass.Passwords
-import kotlinx.android.synthetic.main.activity_main.*
+extern "C" {
 
-class MainActivity : AppCompatActivity() {
+    using namespace electronpass::passwords;
+    JNIEXPORT jstring
 
-    var passwords: Passwords = Passwords()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        sample_text.text = passwords.generate_random_pass(16)
+    JNICALL
+    Java_io_github_electronpass_libelectronpass_Passwords_generate_1random_1pass(
+            JNIEnv *env,
+            jobject,
+            int len) {
+        std::string pass = generate_random_pass(len);
+        return env->NewStringUTF(pass.c_str());
     }
 }

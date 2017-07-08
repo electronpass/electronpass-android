@@ -15,16 +15,15 @@ You should have received a copy of the GNU General Public License
 along with ElectronPass. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <jni.h>
-#include <string>
+package io.github.electronpass.libelectronpass
 
-extern "C"
-JNIEXPORT jstring
+class Passwords {
 
-JNICALL
-Java_io_github_electronpass_MainActivity_stringFromJNI(
-        JNIEnv *env,
-        jobject /* this */) {
-    std::string hello = "Hello from C++";
-    return env->NewStringUTF(hello.c_str());
+    external fun generate_random_pass(len: Int): String
+
+    companion object {
+        init {
+            System.loadLibrary("libelectronpass-wrapper")
+        }
+    }
 }
