@@ -7,19 +7,29 @@ This Android app is currently developed using Android Studio 3.0 or newer. To ru
 - CMake
 - LLDB
 
-These are all available for download via Android SKD Manager.
+These are all available for download via Android SDK Manager.
 
 After cloning this repo, you have to initialize libelectronpass submodule:
-````
+```
 git submodule init
 git submodule update
-````
+```
 
-`libelectronpass` requires `libsodium` - to download and compile it for Android run (might take a while):
-````
-cd app/lib # THIS IS IMPORTANT!
+[libelectronpass](https://github.com/electronpass/libelectronpass) requires [libsodium](https://libsodium.org/).
+
+Before building libsodium, export your `ANDROID_NDK_HOME`. It's path is specific to your NDK installation home.
+
+```sh
+export ANDROID_NDK_HOME="/home/username/Android/Sdk/ndk-bundle"
+# Your NDK installation path might be different
+```
+
+Now fetch and build libsodium using script already included in this repository.
+
+```sh
+cd app/lib  # THIS IS IMPORTANT!
 bash fetch_sodium.sh
-````
+```
 
 **Important notes**:
 - on Linux, you might have wrong version of `libncurses` and clang won't find it - run these commands:
